@@ -11,6 +11,7 @@ body {
   background: radial-gradient(ellipse at top, #0a0a0a, #120017);
   color: #e0e0e0;
   line-height: 1.6;
+　letter-spacing: 0.5px;
 }
 
 /* Header */
@@ -25,6 +26,7 @@ body {
 .header h1 {
   font-size: 48px;
   text-shadow: 0 0 10px #ff00ff;
+  letter-spacing: 2px;
 }
 
 .subtitle {
@@ -35,29 +37,55 @@ body {
 /* Container */
 .container {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
 /* Section */
 .section {
-  background: #1a001f;
-  border: 2px solid #2f003e;
+  background: linear-gradient(145deg, #1a001f, #22002a);
+  border: 1px solid #3a004d;
   border-radius: 10px;
   margin-bottom: 30px;
   padding: 25px;
   box-shadow: 0 0 12px #8a00ff;
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
   border-bottom: 2px solid #ff00ff;
-  padding-bottom: 6px;
   color: #ffccff;
+
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-.section p,
+transition: 0.3s ease;
+cursor: pointer;
+
+.section:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px #ff00ff;
+}
+
+
+.section p {
+  padding-left: 10px;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+.section--primary {
+  border: 1px solid #ff00ff;
+  box-shadow: 0 0 30px #ff00ff;
+  background: linear-gradient(145deg, #22002a, #2d0035);
+}
+
+
 .section ul {
   padding-left: 10px;
 }
@@ -76,3 +104,80 @@ body {
   color: #aaa;
   border-top: 1px solid #333;
 }
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.hero-btn {
+  margin-top: 20px;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.data-card {
+  background: linear-gradient(145deg, #200024, #2b0033);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #3a004d;
+  transition: 0.3s ease;
+}
+
+.data-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px #ff00ff;
+}
+
+.data-card h3 {
+  margin-bottom: 10px;
+  color: #ffccff;
+}
+
+/* スマホ幅用 */
+@media (max-width: 768px) {
+
+  /* 本文や見出しの文字サイズ調整 */
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  /* ボタンやリンクの押しやすさ調整 */
+  .btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  /* 画像を幅100%にしてはみ出さないように */
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* データカードの横並びを縦並びに変更 */
+  .data-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* セクション間の余白微調整 */
+  .section {
+    padding: 16px;
+  }
+}
+
